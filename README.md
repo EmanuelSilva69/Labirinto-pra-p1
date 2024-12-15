@@ -2,4 +2,4 @@
 Labirinto criado para a realização de parte da nota da P1 na Cadeira de Inteligência Artificial 
 ------------------------------------------
 Requisitos :
-Pip install pygame
+Instalar o Pygame. No meu não foi preciso  o pip install pygame, mas talvez no seu seja.
