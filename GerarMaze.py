@@ -1,7 +1,7 @@
 import pygame  #Gerar o labirinto
 import random  #randomizar o negócio
 import json
-from PIL import Image
+
 import time
 #Aqui vou definir o tamanho da janela do pygame (tamanho da maze tbm né)
 RES = WIDTH, HEIGHT = 1200, 900  #parametros da janela
@@ -104,48 +104,50 @@ grid_cells = [Cell(col, row)
 current_cell = grid_cells[0]
 colors, color = [], 80
 stack = []
-
-while True:
-    sc.fill(pygame.Color('#D56062'))  #bota a Carolina Blue
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:  #fecha se eu apertar o x
+correndo = True
+if __name__ == "__main__":
+    while correndo:
+        sc.fill(pygame.Color('#D56062'))  #bota a Carolina Blue
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:  #fecha se eu apertar o x
+                exit()
+            elif event.type == pygame.KEYUP and event.key == pygame.K_SPACE: #resetar a criação do mapa
+                reset_game_state()
+        [cell.draw() for cell in grid_cells]
+        current_cell.visitado = True
+        current_cell.draw_current_cell()
+        [pygame.draw.rect(sc, colors[i],
+                          (cell.x * TILE + 2, cell.y * TILE + 2,
+                           TILE , TILE )) for i,
+         cell in enumerate(stack)]
+        # Descomente caso for usar Cinza!
+        #eu tinha feito usando o cwrap mas ficou colorido demais, ai n sei se devo fazer daquele jeito
+        next_cell = current_cell.check_neighbors()
+        if next_cell:
+            next_cell.visited = True
+            stack.append(current_cell)
+            colors.append((cwrap(current_cell.x * 32), cwrap(current_cell.y * -12), cwrap(current_cell.y * 42))) #isso dai serve pra pintar coloridinho os quadrados que passam na criação
+            #comente acima caso for usar o gradiente do fundo
+            remove_wall(current_cell, next_cell)
+            current_cell = next_cell
+        elif stack:
+            current_cell = stack.pop()
+        else:
+            # Quando o labirinto for concluído, saia do loop
+            time.sleep(2)
+            print("Labirinto concluído!")
+            pygame.image.save(sc, "labirinto.png")
+            correndo = False
+            pygame.quit()
             exit()
-        elif event.type == pygame.KEYUP and event.key == pygame.K_SPACE: #resetar a criação do mapa
-            reset_game_state()
-    [cell.draw() for cell in grid_cells]
-    current_cell.visitado = True
-    current_cell.draw_current_cell()
-    [pygame.draw.rect(sc, colors[i],
-                      (cell.x * TILE + 2, cell.y * TILE + 2,
-                       TILE , TILE )) for i,
-     cell in enumerate(stack)]
-    # Descomente caso for usar Cinza!
-    #eu tinha feito usando o cwrap mas ficou colorido demais, ai n sei se devo fazer daquele jeito
-    next_cell = current_cell.check_neighbors()
-    if next_cell:
-        next_cell.visited = True
-        stack.append(current_cell)
-        colors.append((cwrap(current_cell.x * 32), cwrap(current_cell.y * -12), cwrap(current_cell.y * 42))) #isso dai serve pra pintar coloridinho os quadrados que passam na criação
-        #comente acima caso for usar o gradiente do fundo
-        remove_wall(current_cell, next_cell)
-        current_cell = next_cell
-    elif stack:
-        current_cell = stack.pop()
-    else:
-        # Quando o labirinto for concluído, saia do loop
-        time.sleep(2)
-        print("Labirinto concluído!")
-        pygame.image.save(sc, "labirinto.png")
-        pygame.quit()
-        exit()
-    pygame.display.flip()
-    clock.tick(20)
+        pygame.display.flip()
+        clock.tick(100)
 
 
-    # exportar a imagem
-    Maze_array = [{'x': cell.x, 'y': cell.y, 'walls': cell.walls} for cell in grid_cells]
-    print(Maze_array)
-    file_path = 'walls_data.json'
-    # Salvar a Imagem
-    with open(file_path, 'w') as json_file:
-        json.dump(Maze_array, json_file)
+        # exportar a imagem
+        Maze_array = [{'x': cell.x, 'y': cell.y, 'walls': cell.walls} for cell in grid_cells]
+        print(Maze_array)
+        file_path = 'walls_data.json'
+        # Salvar a Imagem
+        with open(file_path, 'w') as json_file:
+            json.dump(Maze_array, json_file)
