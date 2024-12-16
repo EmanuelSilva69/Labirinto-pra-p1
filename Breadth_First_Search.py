@@ -1,7 +1,8 @@
 import json
 import random
 from collections import deque
-
+start = (0, 0)  # Inicio
+goal = (random.randrange(38), random.randrange(28))  # Objetivo aleatório
 # carrega o arquivo
 with open('walls_data.json', 'r') as file:
     maze = json.load(file)
@@ -45,12 +46,10 @@ def BFS (start,goal):
         path.append(goal)
         goal = parente.get(goal)
     return path[::-1]  # Faz o caminho ser o correto, pois a lista adiciona do objetivo até o inicio
+if __name__ == "__main__":
 
-start = (0, 0)  # Inicio
-goal = (random.randrange(38), random.randrange(28))   # Objetivo aleatório
-
-if goal in cells:
-    path = BFS(start, goal)
-    print(f"Caminho de {start} para {goal}: {path}")
-else:
-    print(f"O objetivo {goal} não existe.")
+    if goal in cells:
+        path = BFS(start, goal)
+        print(f"Caminho de {start} para {goal}: {path}")
+    else:
+        print(f"O objetivo {goal} não existe.")
