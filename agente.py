@@ -78,6 +78,7 @@ def animar_agente(maze,path):
 
     # Quando chegar no path, fecha.
     time.sleep(2)
+    pygame.image.save(sc, "labirintoconcluido.png")
     pygame.quit()
 
 if __name__ == "__main__":
