@@ -47,6 +47,11 @@ def BFS (start,goal):
         goal = parente.get(goal)
     return path[::-1]  # Faz o caminho ser o correto, pois a lista adiciona do objetivo até o inicio
 if __name__ == "__main__":
+    #verificar se não vai cair fora do labirinto#
+    if start not in cells or goal not in cells:
+    print("Início ou objetivo fora do labirinto.")
+    exit()
+
     # carrega o arquivo
     with open('walls_data.json', 'r') as file:
         maze = json.load(file)
