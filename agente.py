@@ -114,4 +114,27 @@ def controlar_agente(maze, start, goal):
     print("Objetivo alcançado!")
     time.sleep(2)
     pygame.quit()
+    # Função Main com escolha de modo
+if __name__ == "__main__":
+    print("Escolha o modo do agente:")
+    print("1 - Modo Automático (BFS)")
+    print("2 - Modo Manual (Controle com Teclas)")
+
+    choice = input("Escolha 1 ou 2: ")
+
+    start = Breadth_First_Search.start
+    goal = Breadth_First_Search.goal
+
+    if choice == '1':
+        path = Breadth_First_Search.BFS(start, goal)
+        if path:
+            print(f"Caminho de {start} para {goal}: {path}")
+            animar_agente(maze, path)
+        else:
+            print(f"O objetivo {goal} não existe.")
+    elif choice == '2':
+        controlar_agente(maze, start, goal)
+    else:
+        print("Escolha inválida.")
+
 
