@@ -10,7 +10,7 @@ if not os.path.isfile('walls_data.json'):
     print("O arquivo 'walls_data.json' não foi encontrado. Gerando agora...")
     time.sleep(1)
     # Executa o script GerarMaze.py para criar o arquivo
-    subprocess.run(["E:/projetos python/.venv/Scripts/python.exe", "GerarMaze.py"])
+    subprocess.run(["python", "GerarMaze.py"])
     print('\035[31m' + "Reinicie o Main! Estava criando arquivos necessários." + '\035[0m')
 
 
