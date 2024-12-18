@@ -2,15 +2,17 @@ import json
 import random
 import os
 import time
+import sys
 import subprocess
 start = (0, 0)  # Inicio
 goal = (random.randrange(38), random.randrange(28))  # Objetivo aleatório
+python_executable = sys.executable
 
 if not os.path.isfile('walls_data.json'):
     print("O arquivo 'walls_data.json' não foi encontrado. Gerando agora...")
     time.sleep(3)
     # Executa o script GerarMaze.py para criar o arquivo
-    subprocess.run(["python", "GerarMaze.py"])
+    subprocess.run(["python_executable", "GerarMaze.py"])
     print('\035[31m' + "Rode o Gerar.Maze e feche! Ele precisa criar os arquivos necessários para o main rodar." + '\035[0m')
 
 
