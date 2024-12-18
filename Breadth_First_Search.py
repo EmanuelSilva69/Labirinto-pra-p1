@@ -9,7 +9,7 @@ goal = (random.randrange(38), random.randrange(28))  # Objetivo aleatório
 
 if not os.path.isfile('walls_data.json'): #cria o arquivo caso não exista
     print("O arquivo 'walls_data.json' não foi encontrado. Gerando agora...")
-    time.sleep(1)
+    time.sleep(2)
     # Executa o script GerarMaze.py para criar o arquivo
     subprocess.run(["E:/projetos python/.venv/Scripts/python.exe", "GerarMaze.py"])
     print('\035[31m' + "Reinicie o Main! Estava criando arquivos necessários." + '\035[0m')
