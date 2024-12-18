@@ -1,26 +1,28 @@
 import json
 import random
-from collections import deque
 import os
 import time
 import subprocess
 start = (0, 0)  # Inicio
 goal = (random.randrange(38), random.randrange(28))  # Objetivo aleatório
 
-if not os.path.isfile('walls_data.json'): #cria o arquivo caso não exista
+if not os.path.isfile('walls_data.json'):
     print("O arquivo 'walls_data.json' não foi encontrado. Gerando agora...")
-    time.sleep(2)
+    time.sleep(1)
     # Executa o script GerarMaze.py para criar o arquivo
-    subprocess.run(["python", "GerarMaze.py"])
+    subprocess.run(["E:/projetos python/.venv/Scripts/python.exe", "GerarMaze.py"])
     print('\035[31m' + "Reinicie o Main! Estava criando arquivos necessários." + '\035[0m')
 
+
 # carrega o arquivo
-with open('walls_data.json', 'r') as file:
-    maze = json.load(file)
+if os.path.isfile('walls_data.json'):
+    with open('walls_data.json', 'r') as file:
+        maze = json.load(file)
 
 # organizar as celulas
 cells = {(cell['x'], cell['y']): cell['walls'] for cell in maze}
 def get_neighbors(x, y, walls):
+    """Return accessible neighbors based on walls.""" #Chat gpt tá falando barras.
     directions = {
         "cima": (x, y - 1),
         "baixo": (x, y + 1), #basicamnete as direções apresentadas.
@@ -34,6 +36,7 @@ def get_neighbors(x, y, walls):
     return neighbors
 
 def BFS (start,goal):
+    """Perform BFS using lists from start to goal."""
     queue = [start]
     visitado = []
     parente = {start : None}

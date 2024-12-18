@@ -6,11 +6,16 @@ import time
 import random
 import os
 import subprocess
-
+try:
+    with open('walls_data.json', 'r') as file:
+        maze = json.load(file)  # Define a variável maze
+except FileNotFoundError:
+    print("Erro: O arquivo 'walls_data.json' não foi encontrado.")
 
 # Carrega o arquivo para o labirinto rodae
-with open('walls_data.json', 'r') as file:
-    maze = json.load(file)
+if os.path.isfile('walls_data.json'):
+    with open('walls_data.json', 'r') as file:
+        maze = json.load(file)
 
 # Organização das células
 cells = {(cell['x'], cell['y']): cell['walls'] for cell in maze}

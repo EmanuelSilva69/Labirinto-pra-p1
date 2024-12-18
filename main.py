@@ -6,6 +6,7 @@ import json
 import os
 import subprocess
 import time
+import os
 import pygame  #Gerar o labirinto
 import random  #randomizar o negócio
 
@@ -30,12 +31,12 @@ def waiting_dots(wait, ndots=4, interval=0.5, message="Gerando o Labirinto", fin
 def main1():
     print('\033[31m'+"Iniciando o processo"+'\033[0m')
 
-    subprocess.run(["python", "GerarMaze.py"])
+    subprocess.run(["E:/projetos python/.venv/Scripts/python.exe", "GerarMaze.py"])
 def main2():
 
-    subprocess.run(["python", "Breadth_First_Search.py"])
+    subprocess.run(["E:/projetos python/.venv/Scripts/python.exe", "Breadth_First_Search.py"])
     time.sleep(1)
-    subprocess.run(["python", "agente.py"])
+    subprocess.run(["E:/projetos python/.venv/Scripts/python.exe", "agente.py"])
 
 if __name__ == "__main__":
     # carrega o arquivo
