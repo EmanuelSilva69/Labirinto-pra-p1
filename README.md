@@ -4,6 +4,7 @@ Labirinto criado para a realização de parte da nota da P1 na Cadeira de Inteli
 Requisitos :
 Instalar o Pygame 
 pip install pygame
+Rodar o GerarMaze inicialmente para gerar os dados necessários.
 ----------------------------------------
 https://github.com/pygame/pygame
 
