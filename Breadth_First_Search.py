@@ -49,7 +49,7 @@ def BFS (start,goal):
 if __name__ == "__main__":
     #verificar se não vai cair fora do labirinto#
     if start not in cells or goal not in cells:
-    print("Início ou objetivo fora do labirinto.")
+        print("Início ou objetivo fora do labirinto.")
     exit()
 
     # carrega o arquivo
