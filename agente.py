@@ -4,6 +4,9 @@ import Breadth_First_Search
 import pygame
 import time
 import random
+import os
+import subprocess
+
 
 # Carrega o arquivo para o labirinto rodae
 with open('walls_data.json', 'r') as file:
