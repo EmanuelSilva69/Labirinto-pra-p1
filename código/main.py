@@ -4,8 +4,10 @@ import GerarMaze
 import random
 import json
 import os
+import importlib
 import subprocess
 import time
+import sys
 import os
 import pygame  #Gerar o labirinto
 import random  #randomizar o negócio
@@ -31,23 +33,16 @@ def waiting_dots(wait, ndots=4, interval=0.5, message="Gerando o Labirinto", fin
 def main1():
     print('\033[31m'+"Iniciando o processo"+'\033[0m')
 
-    subprocess.run(["python", "GerarMaze.py"])
+     python_executable = sys.executable
+    subprocess.run([python_executable, "GerarMaze.py"])
 def main2():
-
-    subprocess.run(["python", "Breadth_First_Search.py"])
+    python_executable = sys.executable
+    subprocess.run([python_executable, "Breadth_First_Search.py"])
     time.sleep(1)
-    subprocess.run(["python", "agente.py"])
+    subprocess.run([python_executable, "agente.py"])
 
 if __name__ == "__main__":
-    # carrega o arquivo
-
-    #main1()
-    #time.sleep(3)
-    # carrega o arquivo
-   # with open('walls_data.json', 'r') as file:
-     #   maze = json.load(file)
- #   main2()
-    # carrega o arquivo
+  
     if not os.path.isfile('walls_data.json'):
         main1()
 
@@ -58,3 +53,4 @@ if __name__ == "__main__":
         with open('walls_data.json', 'r') as file:
             maze = json.load(file)
         main2()
+
