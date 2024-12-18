@@ -22,7 +22,7 @@ if os.path.isfile('walls_data.json'):
 # organizar as celulas
 cells = {(cell['x'], cell['y']): cell['walls'] for cell in maze}
 def get_neighbors(x, y, walls):
-    """Return accessible neighbors based on walls.""" #Chat gpt tá falando barras.
+
     directions = {
         "cima": (x, y - 1),
         "baixo": (x, y + 1), #basicamnete as direções apresentadas.
@@ -36,7 +36,6 @@ def get_neighbors(x, y, walls):
     return neighbors
 
 def BFS (start,goal):
-    """Perform BFS using lists from start to goal."""
     queue = [start]
     visitado = []
     parente = {start : None}
