@@ -41,10 +41,20 @@ def main2():
 if __name__ == "__main__":
     # carrega o arquivo
 
-    main1()
-    time.sleep(3)
+    #main1()
+    #time.sleep(3)
     # carrega o arquivo
-    with open('walls_data.json', 'r') as file:
-        maze = json.load(file)
-    main2()
+   # with open('walls_data.json', 'r') as file:
+     #   maze = json.load(file)
+ #   main2()
+    # carrega o arquivo
+    if not os.path.isfile('walls_data.json'):
+        main1()
 
+    else:
+        main1()
+        time.sleep(3)
+        # carrega o arquivo
+        with open('walls_data.json', 'r') as file:
+            maze = json.load(file)
+        main2()
