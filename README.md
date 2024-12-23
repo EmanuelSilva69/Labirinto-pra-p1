@@ -9,37 +9,37 @@
 
 ## Resumo do Trabalho
 
-> **[O objetivo deste trabalho é desenvolver um sistema que permita a criação, visualização e resolução de labirintos utilizando algoritmos computacionais e interfaces interativas. O projeto engloba três etapas principais: a geração de labirintos de forma procedural, utilizando métodos como busca em profundidade com backtracking para criar labirintos únicos e estruturados; a resolução automática dos labirintos, implementando algoritmos de busca, como o BFS (Busca em Largura), para encontrar o caminho entre o ponto inicial e o objetivo; e a interação do usuário, que pode controlar manualmente o agente dentro do labirinto ou observar a resolução automática animada. Esse trabalho combina lógica algorítmica, manipulação de estruturas de dados e visualização gráfica, promovendo a integração entre teoria de grafos e programação prática para resolver desafios de navegação e busca em espaços complexos.]**
+> **O objetivo deste trabalho é desenvolver um sistema que permita a criação, visualização e resolução de labirintos utilizando algoritmos computacionais e interfaces interativas. O projeto engloba três etapas principais: a geração de labirintos de forma procedural, utilizando métodos como busca em profundidade com backtracking para criar labirintos únicos e estruturados; a resolução automática dos labirintos, implementando algoritmos de busca, como o BFS (Busca em Largura), para encontrar o caminho entre o ponto inicial e o objetivo; e a interação do usuário, que pode controlar manualmente o agente dentro do labirinto ou observar a resolução automática animada. Esse trabalho combina lógica algorítmica, manipulação de estruturas de dados e visualização gráfica, promovendo a integração entre teoria de grafos e programação prática para resolver desafios de navegação e busca em espaços complexos.**
 
 ## Descrição
 
-> **[ 1. Geração do Labirinto
+> **1. Geração do Labirinto
 Objetivo:
 Criar um labirinto único e estruturado de forma procedural, garantindo a navegabilidade entre o ponto inicial e o objetivo.
 
-Metodologia:
+> Metodologia:
 O labirinto é gerado usando o algoritmo de busca em profundidade com backtracking, que constrói caminhos de forma recursiva, removendo paredes para criar passagens.
 Cada célula do labirinto contém informações sobre suas paredes (cima, baixo, esquerda, direita), que determinam as conexões entre as células vizinhas.
 Os dados do labirinto são exportados em formato JSON (walls_data.json), contendo as coordenadas e o estado das paredes de cada célula. Isso permite a reutilização dos dados por outros módulos do sistema.
-Visualização:
+> Visualização:
 Durante a geração, o labirinto é desenhado na tela utilizando a biblioteca Pygame, com células representadas por blocos e paredes desenhadas como linhas.
 O processo de geração é animado, permitindo que o usuário acompanhe a construção em tempo real.
-2. Resolução do Labirinto
-Modo Automático: Resolução com BFS
+>> **2. Resolução do Labirinto
+> Modo Automático: Resolução com BFS
 O labirinto é tratado como um grafo, onde cada célula é um nó e cada passagem (ausência de parede) é uma aresta.
 O algoritmo Busca em Largura (BFS) é utilizado para encontrar o caminho mais curto entre o ponto inicial e o objetivo.
 A BFS percorre o grafo camada por camada, garantindo que o primeiro caminho encontrado seja o mais curto.
 A resolução gera uma lista de coordenadas que representa o caminho percorrido do início ao objetivo.
 Caso o objetivo não seja acessível (labirinto desconectado), o sistema informa que o objetivo não pode ser alcançado.
-Modo Manual: Controle pelo Usuário
+> Modo Manual: Controle pelo Usuário
 O usuário pode controlar manualmente o agente no labirinto utilizando as teclas direcionais ou WASD.
 A movimentação do agente é limitada pela presença de paredes, garantindo que ele só possa se mover para células conectadas.
 Cada movimento do agente é registrado, e o caminho percorrido é destacado na interface para facilitar a visualização.
-3. Visualização Gráfica
-Objetivo:
-Fornecer uma interface intuitiva que permita acompanhar tanto a geração quanto a resolução do labirinto.
+>> 3. Visualização Gráfica
+> Objetivo:
+ Fornecer uma interface intuitiva que permita acompanhar tanto a geração quanto a resolução do labirinto.
 
-Funcionalidades:
+> Funcionalidades:
 O labirinto é desenhado em uma janela interativa, com células, paredes, e o agente sendo representados graficamente.
 No modo automático, o caminho percorrido pelo agente é animado, destacando as células visitadas.
 No modo manual, o agente se move em tempo real, com o caminho percorrido sendo marcado na tela.
