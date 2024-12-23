@@ -16,7 +16,7 @@ Um adendo aqui, eu fiz que a pintura do mapa na criação do mundo tenha 3 jeito
 
 que é só botar "col" no : 
 if self.visitado:
- *col = (cwrap(self.x * 14), #coloque col na cor pra o fundo ficar doidão.
+ *col = (cwrap(self.x * 14), 
  cwrap(self.y * -20),
  cwrap(self.y * 30)) #caso queira usar o fundo cinza, pygame.Color('#1e1e1e')
  pygame.draw.rect(sc, **AQUI** , (x, y, TILE, TILE))
