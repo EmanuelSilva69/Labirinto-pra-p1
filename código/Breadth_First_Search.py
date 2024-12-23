@@ -13,7 +13,7 @@ if not os.path.isfile('walls_data.json'):
     time.sleep(3)
     # Executa o script GerarMaze.py para criar o arquivo
     subprocess.run([python_executable, "GerarMaze.py"])
-    print('\035[31m' + "Rode o Gerar.Maze e feche! Ele precisa criar os arquivos necessários para o main rodar." + '\035[0m')
+    print('\035[31m' + "Os arquivos foram gerados. O main irá rodar." + '\035[0m')
 
 
 # carrega o arquivo
