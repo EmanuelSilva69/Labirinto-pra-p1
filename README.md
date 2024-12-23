@@ -23,7 +23,7 @@
 
 ## Estrutura do Repositório 
 
-- **`/Relatórios/`**: Documentações adicionais (diagramas, relatórios, manuais).
+- **`/Relatório/`**: Documentações adicionais (diagramas, relatórios, manuais).
 - **`/código/`**: Código-fonte principal.
 ---
 
