@@ -7,7 +7,7 @@
 
 ---
 ## Atenção!!
-> **Caso tente rodar o código sem baixar o arquivo.json dentro da pasta código, O Main irá criar 2 labirintos. A primeira criará os arquivos necessários, a 2º funcionará normalmente.**
+> **Caso tente rodar o código sem baixar o arquivo.json dentro da pasta código, O Main irá criar 2 labirintos. A primeira janela criará os arquivos necessários, a 2º funcionará normalmente. Quando os labirintos terminarem de serem criados, observe o terminal, e escolha que tipo de movimento será desejado**
 
 ## Resumo do Trabalho
 
