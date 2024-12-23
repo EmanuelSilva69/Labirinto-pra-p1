@@ -33,7 +33,7 @@ def waiting_dots(wait, ndots=4, interval=0.5, message="Gerando o Labirinto", fin
 def main1():
     print('\033[31m'+"Iniciando o processo"+'\033[0m')
 
-     python_executable = sys.executable
+    python_executable = sys.executable
     subprocess.run([python_executable, "GerarMaze.py"])
 def main2():
     python_executable = sys.executable
