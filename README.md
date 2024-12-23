@@ -46,7 +46,6 @@ Agradecemos a todas as pessoas e instituições que contribuíram para a realiza
 
 ## Outros Repositórios
 
-> **[Liste aqui os links para outros repositórios que fazem parte do seu portfólio ou que complementam este projeto. Exemplo:]**
 
 - https://github.com/EmanuelSilva69/Formigueiro-em-Netlogo
 
