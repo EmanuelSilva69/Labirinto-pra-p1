@@ -7,7 +7,7 @@
 
 ---
 ## Atenção!!
-> **Caso tente rodar o código sem baixar o arquivo.json dentro da pasta códigos, deverá rodar o main.py 2 vezes. A primeira dará um erro e criará os arquivos necessários, a 2º funcionará normalmente.**
+> **Caso tente rodar o código sem baixar o arquivo.json dentro da pasta código, deverá rodar o main.py 2 vezes. A primeira dará um erro e criará os arquivos necessários, a 2º funcionará normalmente.**
 
 ## Resumo do Trabalho
 
