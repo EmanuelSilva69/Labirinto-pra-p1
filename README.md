@@ -13,7 +13,7 @@
 
 ## Descrição
 
-> **1. Geração do Labirinto
+> 1. Geração do Labirinto
 Objetivo:
 Criar um labirinto único e estruturado de forma procedural, garantindo a navegabilidade entre o ponto inicial e o objetivo.
 
@@ -24,8 +24,8 @@ Os dados do labirinto são exportados em formato JSON (walls_data.json), contend
 > Visualização:
 Durante a geração, o labirinto é desenhado na tela utilizando a biblioteca Pygame, com células representadas por blocos e paredes desenhadas como linhas.
 O processo de geração é animado, permitindo que o usuário acompanhe a construção em tempo real.
->> **2. Resolução do Labirinto
-> Modo Automático: Resolução com BFS
+> 2. Resolução do Labirinto
+Modo Automático: Resolução com BFS
 O labirinto é tratado como um grafo, onde cada célula é um nó e cada passagem (ausência de parede) é uma aresta.
 O algoritmo Busca em Largura (BFS) é utilizado para encontrar o caminho mais curto entre o ponto inicial e o objetivo.
 A BFS percorre o grafo camada por camada, garantindo que o primeiro caminho encontrado seja o mais curto.
@@ -35,7 +35,7 @@ Caso o objetivo não seja acessível (labirinto desconectado), o sistema informa
 O usuário pode controlar manualmente o agente no labirinto utilizando as teclas direcionais ou WASD.
 A movimentação do agente é limitada pela presença de paredes, garantindo que ele só possa se mover para células conectadas.
 Cada movimento do agente é registrado, e o caminho percorrido é destacado na interface para facilitar a visualização.
->> 3. Visualização Gráfica
+> 3. Visualização Gráfica
 > Objetivo:
  Fornecer uma interface intuitiva que permita acompanhar tanto a geração quanto a resolução do labirinto.
 
